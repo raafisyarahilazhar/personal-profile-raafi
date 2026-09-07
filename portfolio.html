@@ -7,6 +7,12 @@
   <title>My Projects - Portfolio</title>
   <link rel="icon" type="image/png" href="assets/image/R.png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #fff4c2, #ffe680);
+    }
+  </style>
 </head>
 
 <body class="bg-gradient-to-br from-yellow-50 via-yellow-100 to-white text-gray-800 min-h-screen">
@@ -61,9 +67,31 @@
     </div>
   </main>
 
-  <footer class="bg-white/80 mt-12 py-6 text-center text-sm text-gray-500">
-    &copy; 2025 John Doe. All rights reserved.
+  <!-- Footer -->
+  <footer class="text-gray-800">
+    <div class="container mx-auto px-6 md:px-12 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm text-gray-600">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="https://github.com/raafisyarahilazhar" target="_blank" class="hover:text-yellow-600 transition" aria-label="GitHub">
+            <i data-feather="github" class="w-5 h-5"></i>
+          </a>
+          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" class="hover:text-yellow-600 transition" aria-label="LinkedIn">
+            <i data-feather="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="mailto:r.syarahilazhar@gmail.com" class="hover:text-yellow-600 transition" aria-label="Email">
+            <i data-feather="mail" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    feather.replace();
+  </script>
 </body>
 
 </html>
