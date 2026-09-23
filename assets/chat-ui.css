@@ -151,7 +151,6 @@ main > section:first-child .hero-photo {
 main > section:first-child .hero-photo img {
   border: 0 !important;
   border-radius: 0 !important;
-  filter: grayscale(100%) contrast(1.05);
 }
 
 /* ---------- Section headings ---------- */
