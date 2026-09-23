@@ -1,97 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="transition-colors duration-150">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Projects - Portfolio</title>
+  <title>All Projects — Raafi Syarahil Azhar</title>
   <link rel="icon" type="image/png" href="assets/image/R.png">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <script src="https://unpkg.com/feather-icons"></script>
-  <style>
-    .gradient-bg {
-      background: linear-gradient(135deg, #fff4c2, #ffe680);
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0a',
+            'bg-elevated': '#141414',
+            border: '#262626',
+            'border-hover': '#3d3d3d',
+            fg: '#fafafa',
+            'fg-muted': '#a3a3a3',
+            'fg-subtle': '#737373',
+            accent: '#fbbf24',
+            'accent-hover': '#f59e0b',
+            'accent-dim': '#78350f',
+            success: '#4ade80',
+            warning: '#fbbf24',
+            error: '#f87171',
+          },
+          fontFamily: {
+            sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Menlo', 'monospace'],
+          },
+          spacing: {
+            'xs': '4px', 'sm': '8px', 'md': '16px', 'lg': '24px', 'xl': '32px', '2xl': '48px', '3xl': '72px',
+          },
+          borderRadius: {
+            'sm': '4px', 'md': '8px', 'lg': '16px',
+          },
+          boxShadow: {
+            'card': '0 0 0 1px rgb(255 255 255 / 0.03), 0 4px 12px rgb(0 0 0 / 0.4)',
+            'focus': '0 0 0 2px #fbbf24',
+          },
+          transitionDuration: {
+            'fast': '150ms',
+          },
+          transitionTimingFunction: {
+            'ease': 'ease',
+          },
+        }
+      }
     }
+  </script>
+  <style>
+    .btn-primary { @apply bg-accent text-bg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-accent-hover active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-secondary { @apply border border-border-hover text-fg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-bg-elevated hover:border-accent active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-ghost { @apply text-fg-muted px-3 py-2 font-medium transition-colors duration-fast hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .card { @apply bg-bg-elevated border border-border rounded-md p-4 md:p-5; }
+    .card-featured { @apply bg-bg-elevated border border-border rounded-lg shadow-card p-6 md:p-8; }
+    .nav-link { @apply text-fg-muted font-medium transition-colors duration-fast hover:text-fg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-sm px-2 py-1 -mx-1; }
+    .nav-link-active { @apply text-accent font-semibold; }
+    .section-title { @apply text-3xl md:text-4xl font-bold text-fg tracking-tight; }
+    .section-desc { @apply text-fg-muted max-w-2xl mt-2 text-lg leading-relaxed; }
+    .prose { @apply text-fg-muted leading-relaxed; }
+    .prose strong { @apply text-fg font-semibold; }
+    .tag { @apply px-2 py-0.5 text-xs font-medium rounded-sm bg-accent-dim text-accent border border-accent/30; }
+    .icon { @apply inline-block align-middle; width: 1em; height: 1em; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-md { width: 20px; height: 20px; }
+    .icon-lg { width: 24px; height: 24px; }
+    .divider { @apply h-px bg-border w-full; }
   </style>
+  <link rel="stylesheet" href="assets/chat-ui.css">
 </head>
+<body class="bg-bg text-fg min-h-screen font-sans antialiased transition-colors duration-150">
 
-<body class="bg-gradient-to-br from-yellow-50 via-yellow-100 to-white text-gray-800 min-h-screen">
-  <header class="bg-white/80 backdrop-blur shadow-md py-6 sticky top-0 z-10">
-    <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-800">Raafi Syarahil Azhar</h1>
-      <a href="index.html" class="text-yellow-600 font-medium hover:underline transition">← Back to Home</a>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-bg/80 border-b border-border transition-colors duration-150">
+    <div class="max-w-7xl mx-auto px-4 md:px-10">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="index.html" class="text-xl font-bold text-fg" aria-label="Raafi Syarahil Azhar — Home">Raafi Syarahil Azhar</a>
+        <nav aria-label="Main navigation">
+          <ul class="flex items-center gap-1 md:gap-4">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link nav-link-active">All Projects</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main class="py-12">
-    <div class="container mx-auto px-6 md:px-12">
-      <h2 class="text-4xl font-extrabold text-center mb-10">My Projects 🚀</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white/90 rounded-2xl shadow-xl p-6">
-          <img src="assets/image/travel.png" alt="Travel Booking Website" class="w-full h-48 object-cover mb-2 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">Travel Booking Website</h3>
-          <p class="text-sm mb-4">Website for ordering and information on tour packages with destination search features and booking system.</p>
-          <a href="preview-travel-booking.html" target="_blank" class="inline-block bg-yellow-500 text-white text-lg font-medium px-4 py-2 rounded-lg hover:bg-yellow-600 transition">Preview</a>
-        </div>
-        <div class="bg-white/90 rounded-2xl shadow-xl p-6">
-          <img src="assets/image/epos.jpg" alt="E-POS" class="w-full h-48 object-cover mb-2 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">E-POS</h3>
-          <p class="text-sm mb-4">Point of Sale web app with Laravel and Tailwind.</p>
-          <a href="preview-epos.html" target="_blank" class="inline-block bg-yellow-500 text-white text-lg font-medium px-4 py-2 rounded-lg hover:bg-yellow-600 transition">Preview</a>
-        </div>
-        <div class="bg-white/90 rounded-2xl shadow-xl p-6">
-          <img src="assets/image/market.png" alt="Marketplace SUNFORUS" class="w-full h-48 object-cover mb-2 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">Marketplace SUNFORUS</h3>
-          <p class="text-sm mb-4">Marketplace site for a local brand using Laravel.</p>
-          <a href="preview-sunforus.html" target="_blank" class="inline-block bg-yellow-500 text-white text-lg font-medium px-4 py-2 rounded-lg hover:bg-yellow-600 transition">Preview</a>
-        </div>
-        <div class="bg-white/90 rounded-2xl shadow-xl p-6">
-          <img src="assets/image/sicerdas1.png" alt="SiCerdas" class="w-full h-48 object-cover mb-2 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">SiCerdas</h3>
-          <p class="text-sm mb-4">SICERDAS is a web-based village administration service system that enables citizens to submit document/letter.</p>
-          <a href="preview-sicerdas.html" target="_blank" class="inline-block bg-yellow-500 text-white text-lg font-medium px-4 py-2 rounded-lg hover:bg-yellow-600 transition">Preview</a>
-        </div>
-        <div class="bg-white/90 rounded-2xl shadow-xl p-6">
-          <img src="assets/image/simantap.png" alt="Simantap" class="w-full h-48 object-cover mb-2 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">Simantap</h3>
-          <p class="text-sm mb-4">Simantap (Sistem Manajamen Tugas Akhir dan Praktik) is a web application for academic proposal submission and verification.</p>
-          <a href="preview-simantap.html" target="_blank" class="inline-block bg-yellow-500 text-white text-lg font-medium px-4 py-2 rounded-lg hover:bg-yellow-600 transition">Preview</a>
-        </div>
-        <div class="bg-white/90 rounded-2xl shadow-xl p-6">
-          <img src="assets/image/siakad.png" alt="Siakad" class="w-full h-48 object-cover mb-2 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">Siakad</h3>
-          <p class="text-sm mb-4">SIAKAD (Sistem Informasi Akademik) is a web-based Academic Information System that digitalizes school administration.</p>
-          <a href="preview-siakad.html" target="_blank" class="inline-block bg-yellow-500 text-white text-lg font-medium px-4 py-2 rounded-lg hover:bg-yellow-600 transition">Preview</a>
+  <main>
+
+    <!-- Page Header -->
+    <section aria-labelledby="page-title" class="pt-xl pb-xl">
+      <div class="max-w-7xl mx-auto px-4 md:px-10">
+        <div class="grid grid-cols-12 gap-4">
+          <div class="col-span-12">
+            <h1 id="page-title" class="section-title">All Projects</h1>
+            <p class="section-desc">Six production systems built across different domains — village services, education, retail, and internal tools.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Project Grid -->
+    <section id="projects" aria-labelledby="projects-title" class="pb-3xl">
+      <div class="max-w-7xl mx-auto px-4 md:px-10">
+        <div class="grid grid-cols-12 gap-6">
+
+          <!-- SICERDAS -->
+          <article class="col-span-12 md:col-span-6 lg:col-span-4 card">
+            <a href="preview-sicerdas.html" class="block">
+              <img src="assets/image/sicerdas1.png" alt="SICERDAS dashboard" class="w-full aspect-[4/3] object-cover rounded-md mb-4">
+              <h3 class="text-lg font-semibold text-fg mb-1">SICERDAS</h3>
+              <p class="text-sm text-fg-muted mb-3 line-clamp-2">Village administration service system — multi-role workflow, document generation with QR verification, WhatsApp notifications, demographic analytics.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel 12</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">Spatie Permission</span>
+                <span class="tag">WhatsApp API</span>
+              </div>
+              <span class="btn-ghost text-sm inline-flex items-center gap-1">View Details
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- SIMANTAP -->
+          <article class="col-span-12 md:col-span-6 lg:col-span-4 card">
+            <a href="preview-simantap.html" class="block">
+              <img src="assets/image/simantap (1).png" alt="SIMANTAP proposal management" class="w-full aspect-[4/3] object-cover rounded-md mb-4">
+              <h3 class="text-lg font-semibold text-fg mb-1">SIMANTAP</h3>
+              <p class="text-sm text-fg-muted mb-3 line-clamp-2">Final project management system with AI-assisted similarity & novelty evaluation, background job processing.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel 12</span>
+                <span class="tag">AI Pipeline</span>
+                <span class="tag">Queue/Jobs</span>
+              </div>
+              <span class="btn-ghost text-sm inline-flex items-center gap-1">View Details
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- SIAKAD -->
+          <article class="col-span-12 md:col-span-6 lg:col-span-4 card">
+            <a href="preview-siakad.html" class="block">
+              <img src="assets/image/siakad1.jpg" alt="SIAKAD academic dashboard" class="w-full aspect-[4/3] object-cover rounded-md mb-4">
+              <h3 class="text-lg font-semibold text-fg mb-1">SIAKAD</h3>
+              <p class="text-sm text-fg-muted mb-3 line-clamp-2">Academic Information System — scheduling, attendance, grades, student promotion, Excel import, role-based access.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel 12</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">Breeze</span>
+                <span class="tag">Maatwebsite Excel</span>
+              </div>
+              <span class="btn-ghost text-sm inline-flex items-center gap-1">View Details
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- E-POS -->
+          <article class="col-span-12 md:col-span-6 lg:col-span-4 card">
+            <a href="preview-epos.html" class="block">
+              <img src="assets/image/epos.jpg" alt="E-POS cashier interface" class="w-full aspect-[4/3] object-cover rounded-md mb-4">
+              <h3 class="text-lg font-semibold text-fg mb-1">E-POS</h3>
+              <p class="text-sm text-fg-muted mb-3 line-clamp-2">Cashier application for retail/MSME — multi-user login, sales recording, receipt printing, PDF reports.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <span class="btn-ghost text-sm inline-flex items-center gap-1">View Details
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- MARKETPLACE SUNFORUS -->
+          <article class="col-span-12 md:col-span-6 lg:col-span-4 card">
+            <a href="preview-sunforus.html" class="block">
+              <img src="assets/image/market.png" alt="Sunforus marketplace" class="w-full aspect-[4/3] object-cover rounded-md mb-4">
+              <h3 class="text-lg font-semibold text-fg mb-1">Marketplace Sunforus</h3>
+              <p class="text-sm text-fg-muted mb-3 line-clamp-2">Online store — product catalog, cart, checkout, order management, admin panel.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <span class="btn-ghost text-sm inline-flex items-center gap-1">View Details
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </span>
+            </a>
+          </article>
+
+          <!-- TRAVEL BOOKING -->
+          <article class="col-span-12 md:col-span-6 lg:col-span-4 card">
+            <a href="preview-travel-booking.html" class="block">
+              <img src="assets/image/travel.png" alt="Travel booking website" class="w-full aspect-[4/3] object-cover rounded-md mb-4">
+              <h3 class="text-lg font-semibold text-fg mb-1">Travel Booking Website</h3>
+              <p class="text-sm text-fg-muted mb-3 line-clamp-2">Tour package booking — destination search, booking system, contact form, admin CRUD.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <span class="btn-ghost text-sm inline-flex items-center gap-1">View Details
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
-  <footer class="text-gray-800">
-    <div class="container mx-auto px-6 md:px-12 py-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <p class="text-sm text-gray-600">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
+  <footer class="border-t border-border py-xl" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-4">
+          <p class="font-semibold text-fg">Raafi Syarahil Azhar</p>
+          <p class="text-sm text-fg-subtle mt-1">Backend Developer — Laravel, PHP, Python</p>
         </div>
-        <div class="flex space-x-4">
-          <a href="https://github.com/raafisyarahilazhar" target="_blank" class="hover:text-yellow-600 transition" aria-label="GitHub">
-            <i data-feather="github" class="w-5 h-5"></i>
+        <nav aria-label="Footer links" class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-center gap-4 text-sm">
+          <a href="index.html" class="text-fg-subtle hover:text-fg transition-colors">Home</a>
+          <a href="cv.html" class="text-fg-subtle hover:text-fg transition-colors">CV</a>
+        </nav>
+        <div class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-end gap-4">
+          <a href="https://github.com/raafisyarahilazhar" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="GitHub">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
-          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" class="hover:text-yellow-600 transition" aria-label="LinkedIn">
-            <i data-feather="linkedin" class="w-5 h-5"></i>
+          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="LinkedIn">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
-          <a href="mailto:r.syarahilazhar@gmail.com" class="hover:text-yellow-600 transition" aria-label="Email">
-            <i data-feather="mail" class="w-5 h-5"></i>
+          <a href="mailto:r.syarahilazhar@gmail.com" class="text-fg-subtle hover:text-fg transition-colors" aria-label="Email">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </a>
         </div>
       </div>
+      <div class="divider mt-xl mx-auto" style="max-width: 72rem;"></div>
+      <p class="text-xs text-fg-subtle text-center mt-lg">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    feather.replace();
-  </script>
 </body>
-
 </html>

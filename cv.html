@@ -1,185 +1,359 @@
 <!DOCTYPE html>
-<html lang="en" class="transition duration-300">
-
+<html lang="en" class="transition-colors duration-150">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV - Raafi Syarahil Azhar</title>
+  <title>CV — Raafi Syarahil Azhar</title>
   <link rel="icon" type="image/png" href="assets/image/R.png">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0a',
+            'bg-elevated': '#141414',
+            border: '#262626',
+            'border-hover': '#3d3d3d',
+            fg: '#fafafa',
+            'fg-muted': '#a3a3a3',
+            'fg-subtle': '#737373',
+            accent: '#fbbf24',
+            'accent-hover': '#f59e0b',
+            'accent-dim': '#78350f',
+            success: '#4ade80',
+            warning: '#fbbf24',
+            error: '#f87171',
+          },
+          fontFamily: {
+            sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Menlo', 'monospace'],
+          },
+          spacing: {
+            'xs': '4px', 'sm': '8px', 'md': '16px', 'lg': '24px', 'xl': '32px', '2xl': '48px', '3xl': '72px',
+          },
+          borderRadius: {
+            'sm': '4px', 'md': '8px', 'lg': '16px',
+          },
+          boxShadow: {
+            'card': '0 0 0 1px rgb(255 255 255 / 0.03), 0 4px 12px rgb(0 0 0 / 0.4)',
+            'focus': '0 0 0 2px #fbbf24',
+          },
+          transitionDuration: {
+            'fast': '150ms',
+          },
+          transitionTimingFunction: {
+            'ease': 'ease',
+          },
+        }
+      }
+    }
+  </script>
   <style>
-    .gradient-bg {
-      background: linear-gradient(135deg, #fff4c2, #ffe680);
-    }
-
-    .dark .gradient-bg {
-      background: linear-gradient(135deg, #1f2937, #111827);
-    }
+    .btn-primary { @apply bg-accent text-bg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-accent-hover active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-secondary { @apply border border-border-hover text-fg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-bg-elevated hover:border-accent active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-ghost { @apply text-fg-muted px-3 py-2 font-medium transition-colors duration-fast hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .card { @apply bg-bg-elevated border border-border rounded-md p-4 md:p-5; }
+    .card-featured { @apply bg-bg-elevated border border-border rounded-lg shadow-card p-6 md:p-8; }
+    .nav-link { @apply text-fg-muted font-medium transition-colors duration-fast hover:text-fg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-sm px-2 py-1 -mx-1; }
+    .nav-link-active { @apply text-accent font-semibold; }
+    .section-title { @apply text-3xl md:text-4xl font-bold text-fg tracking-tight; }
+    .section-desc { @apply text-fg-muted max-w-2xl mt-2 text-lg leading-relaxed; }
+    .prose { @apply text-fg-muted leading-relaxed; }
+    .prose strong { @apply text-fg font-semibold; }
+    .tag { @apply px-2 py-0.5 text-xs font-medium rounded-sm bg-accent-dim text-accent border border-accent/30; }
+    .icon { @apply inline-block align-middle; width: 1em; height: 1em; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-md { width: 20px; height: 20px; }
+    .icon-lg { width: 24px; height: 24px; }
+    .divider { @apply h-px bg-border w-full; }
   </style>
+  <link rel="stylesheet" href="assets/chat-ui.css">
 </head>
+<body class="bg-bg text-fg min-h-screen font-sans antialiased transition-colors duration-150 cv-page">
 
-<body class="bg-gradient-to-br from-yellow-300 via-yellow-150 to-white text-gray-800 min-h-screen font-sans transition duration-300">
- 
-  <section id="cv" class="py-16">
-    <div class="container mx-auto px-6 md:px-12">
-
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-        <a href="index.html" class="text-yellow-600 font-medium hover:underline transition">
-          ← Back to Home
-        </a>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-bg/80 border-b border-border transition-colors duration-150">
+    <div class="max-w-4xl mx-auto px-4 md:px-10">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="index.html" class="text-xl font-bold text-fg" aria-label="Raafi Syarahil Azhar — Home">Raafi Syarahil Azhar</a>
+        <nav aria-label="Main navigation">
+          <ul class="flex items-center gap-1 md:gap-4">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Projects</a></li>
+            <li><a href="cv.html" class="nav-link nav-link-active">CV</a></li>
+          </ul>
+        </nav>
       </div>
+    </div>
+  </header>
 
-      <h2 class="text-4xl font-extrabold text-center mb-10">Curriculum Vitae</h2>
+  <main class="pb-3xl">
 
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 space-y-6">
-        <div class="text-center">
-          <h3 class="text-2xl font-bold">Raafi Syarahil Azhar</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">Backend Developer | Informatics Engineering Student</p>
-          <p class="text-sm">📅 Date of Birth: August 23, 2003</p>
-          <div class="flex justify-center space-x-4 mt-2 text-sm">
-            <span>📍West Bandung, West Java, Indonesia</span>
-            <span>📞 0896-5520-2319</span>
-            <span>📧 r.syarahilazhar@gmail.com</span>
+    <!-- CV Header -->
+    <section aria-labelledby="cv-title" class="pt-2xl pb-xl">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <div class="grid grid-cols-12 gap-6 mb-xl">
+          <div class="col-span-12 lg:col-span-8">
+            <h1 id="cv-title" class="text-3xl md:text-4xl font-bold text-fg tracking-tight">Curriculum Vitae</h1>
+            <p class="mt-2 text-fg-muted">Software Engineer — Laravel, PHP, Python</p>
+          </div>
+          <div class="col-span-12 lg:col-span-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 justify-end">
+            <a href="index.html" class="btn-ghost text-sm">← Back to Home</a>
+            <a href="assets/document/CV Raafi Syarahil Azhar.pdf" download class="btn-primary text-sm whitespace-nowrap">Download PDF</a>
           </div>
         </div>
 
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Education</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>Universitas Kebangsaan Republik Indonesia - Informatics Engineering (2022 - 2026)</li>
-            <li>SMK Dharma Bhakti Indonesia - Software engineering (2019 - 2022)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Work Experience</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>Intern Lokpro Media - Staff Laravel (September 01 - December 31, 2024). <a href="https://drive.google.com/file/d/1SoaWpaXUvCGx-Zu9AswAVHFEaW_fyNB2/view?usp=drive_link" class="text-yellow-600">certificate</a></li>
-            <li>PT. Tazaka Elektrik Teknologi - Software Engineer (Maret 2026 - Sekarang).</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Skill</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>PHP, Python, Laravel, Vue, Bootstrap</li>
-            <li>MySQL, Git, VSCode, Laragon, GitHub</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Work Projects (PT. Tazaka Elektrik Teknologi)</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>Brave Gym Management — Laravel, Vue.js, MySQL (gym & member management system)</li>
-            <li>Scentplus Club — Laravel (club membership system)</li>
-            <li>SMILeRS — Laravel (internal system with date range & reporting)</li>
-            <li>RupaKarir — Laravel (career platform)</li>
-            <li>Cental Accounting — Laravel ERP (accounting module: COA, kasbon, expense reports)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Work Projects (PT. Diantara / PT. NTI)</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>Accounting Frontend — Vue.js, Node (document management & upload)</li>
-            <li>Accounting Backend API — Laravel (REST API for accounting system)</li>
-            <li>Modul Kain Makloon — SQL (BPKEM/DPKEM/LPKEMB expedition reporting)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Web Application Projects</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>SIAKAD — Laravel 12, Tailwind CSS, Breeze (school academic information system)</li>
-            <li>SICERDAS — Laravel 12, Spatie Permission, WhatsApp API (village online service system)</li>
-            <li>SIMANTAP — Laravel 12, AI similarity/novelty (final project management system)</li>
-            <li>E-POS — Laravel, Bootstrap (retail/MSME cashier application)</li>
-            <li>Marketplace Sunforus — Laravel (online store)</li>
-            <li>Travel Booking Website — Laravel (tour package booking)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">API & Integration Projects</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>API UKRI — Laravel, Sanctum (REST API for academic master data)</li>
-            <li>SSO UKRI — Laravel, OAuth2 Passport (Single Sign-On server)</li>
-            <li>Face Recognition Laravel — Laravel, Inertia.js, Vue.js (face recognition & monitoring)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">AI / Machine Learning Projects</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>MBG Food Detector — YOLO, FastAPI, Flutter (food detection & nutrition analysis)</li>
-            <li>Food Detection YOLOv8 — Python, YOLOv8 (food detection model training)</li>
-            <li>Diabetes App — Flutter, Python, FastAPI, ML (diabetes prediction & food tracking)</li>
-            <li>NutriScan (NOVA) — PyTorch Faster R-CNN, FastAPI (NOVA food classification)</li>
-            <li>ScholarCheck (Turnitin Checker Hub) — Python (document similarity checking)</li>
-            <li>Similarity Apps — Python, AI (text similarity & novelty testing)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Mobile & IoT Projects</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>Nexanode / HydroFarm IoT — Flutter, MQTT (hydroponic farm monitoring & control)</li>
-            <li>IR Servo — Arduino, ESP32 (IR sensor + servo motor control)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Certification</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>Full-Stack Web Developer:Toko Online - BuildWithAngga (August 06, 2024). <a href="https://drive.google.com/file/d/19Gqu6ZpbAgZkqQgnZuuj6X_fkrsYfrtR/view?usp=sharing" class="text-yellow-600">certificate</a></li>
-            <li>Full-Stack Website Developer - BuildWithAngga (August 31, 2022). <a href="https://drive.google.com/file/d/1IoebjhnPuT_gZG4xSwrbelRdseudfJ2c/view?usp=drive_link" class="text-yellow-600">certificate</a></li>
-            <li>Junior Web Developer - Digitalent KOMINFO (August 25, 2022). <a href="https://drive.google.com/file/d/1MR36rOKXqfQbwqXMD5Eyd5O90bW3YaVt/view?usp=drive_link" class="text-yellow-600">certificate</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-semibold border-b pb-1">Language</h4>
-          <ul class="list-disc list-inside mt-2 text-sm">
-            <li>Indonesian - Active</li>
-            <li>English - Passive</li>
-          </ul>
-        </div>
-
-        <div class="text-center mt-6">
-          <a href="assets/document/CV Raafi Syarahil Azhar.pdf" class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition">
-            Download CV
-          </a>
+        <!-- Contact Info -->
+        <div class="grid grid-cols-12 gap-4 md:gap-6 text-sm text-fg-muted border-t border-border pt-xl">
+          <div class="col-span-12 sm:col-span-4">
+            <p class="font-medium text-fg">Location</p>
+            <p>West Bandung, West Java, Indonesia</p>
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <p class="font-medium text-fg">Phone</p>
+            <p>+62 896-5520-2319</p>
+          </div>
+          <div class="col-span-12 sm:col-span-4">
+            <p class="font-medium text-fg">Email</p>
+            <p><a href="mailto:r.syarahilazhar@gmail.com" class="hover:text-accent transition-colors">r.syarahilazhar@gmail.com</a></p>
+          </div>
+          <div class="col-span-12">
+            <p class="font-medium text-fg">Links</p>
+            <div class="flex flex-wrap gap-4 mt-1">
+              <a href="https://github.com/raafisyarahilazhar" target="_blank" rel="noopener" class="hover:text-accent transition-colors text-sm">GitHub</a>
+              <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" rel="noopener" class="hover:text-accent transition-colors text-sm">LinkedIn</a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- CV Sections -->
+    <div class="max-w-4xl mx-auto px-4 md:px-10 space-y-2xl">
+
+      <!-- Education -->
+      <section aria-labelledby="education-title">
+        <h2 id="education-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Education</h2>
+        <dl class="space-y-lg">
+          <div class="grid grid-cols-12 gap-4">
+            <dt class="col-span-12 md:col-span-4 font-medium text-fg">Universitas Kebangsaan Republik Indonesia</dt>
+            <dd class="col-span-12 md:col-span-8 text-fg-muted text-sm">Informatics Engineering — 2022 to 2026</dd>
+          </div>
+          <div class="grid grid-cols-12 gap-4">
+            <dt class="col-span-12 md:col-span-4 font-medium text-fg">SMK Dharma Bhakti Indonesia</dt>
+            <dd class="col-span-12 md:col-span-8 text-fg-muted text-sm">Software Engineering — 2019 to 2022</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- organizational experience -->
+      <section aria-labelledby="organizational experience-title">
+        <h2 id="organizational-experience-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">organizational experience</h2>
+        <dl class="space-y-lg">
+          <div class="grid grid-cols-12 gap-4">
+            <dt class="col-span-12 md:col-span-4 font-medium text-fg">Badan Pengawas Pengurus Himpunan Mahasiswa Teknik Informatika UKRI</dt>
+            <dd class="col-span-12 md:col-span-8 text-fg-muted text-sm">Ketua BPPH — 2025</dd>
+          </div>
+          <div class="grid grid-cols-12 gap-4">
+            <dt class="col-span-12 md:col-span-4 font-medium text-fg">Himpunan Mahasiswa Teknik Informatika UKRI</dt>
+            <dd class="col-span-12 md:col-span-8 text-fg-muted text-sm">Ketua Himpunan — 2023 to 2024</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Work Experience -->
+      <section aria-labelledby="experience-title">
+        <h2 id="experience-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Work Experience</h2>
+        <dl class="space-y-xl">
+          <div class="grid grid-cols-12 gap-4">
+            <dt class="col-span-12 md:col-span-8 font-medium text-fg">PT. Tazaka Elektrik Teknologi</dt>
+            <dd class="col-span-12 md:col-span-4 text-sm text-fg-subtle text-right md:text-left">March 2026 — Present</dd>
+          </div>
+          <dd class="col-span-12 text-fg-muted text-sm">Software Engineer</dd>
+        </dl>
+        <dl class="space-y-xl mt-xl">
+          <div class="grid grid-cols-12 gap-4">
+            <dt class="col-span-12 md:col-span-8 font-medium text-fg">Lokpro Media</dt>
+            <dd class="col-span-12 md:col-span-4 text-sm text-fg-subtle text-right md:text-left">September 2024 — December 2024</dd>
+          </div>
+          <dd class="col-span-12 text-fg-muted text-sm">Staff Laravel (Internship) — <a href="https://drive.google.com/file/d/1SoaWpaXUvCGx-Zu9AswAVHFEaW_fyNB2/view?usp=drive_link" target="_blank" rel="noopener" class="text-accent hover:underline text-sm">certificate</a></dd>
+        </dl>
+      </section>
+
+      <!-- Technical Skills -->
+      <section aria-labelledby="skills-title">
+        <h2 id="skills-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Technical Skills</h2>
+        <div class="grid grid-cols-12 gap-xl">
+          <div class="col-span-12 md:col-span-6 lg:col-span-3">
+            <h3 class="font-medium text-fg mb-md">Languages & Frameworks</h3>
+            <ul class="space-y-sm text-sm text-fg-muted">
+              <li>PHP 8.1+, Python 3.10+</li>
+              <li>Laravel 8–12, Django, FastAPI</li>
+              <li>Vue.js 3 (Composition API), Alpine.js, Livewire</li>
+              <li>Blade, Inertia.js</li>
+            </ul>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-3">
+            <h3 class="font-medium text-fg mb-md">Database & Infrastructure</h3>
+            <ul class="space-y-sm text-sm text-fg-muted">
+              <li>MySQL / MariaDB (indexing, query optimization)</li>
+              <li>Redis (caching, queues, rate limiting)</li>
+              <li>Docker, Laravel Sail, Vite</li>
+              <li>Linux, Nginx, basic CI/CD pipelines</li>
+            </ul>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-3">
+            <h3 class="font-medium text-fg mb-md">Tools & Libraries</h3>
+            <ul class="space-y-sm text-sm text-fg-muted">
+              <li>Git, VS Code, Laragon, GitHub</li>
+              <li>Spatie Laravel Permission, Laravel Breeze</li>
+              <li>PHPWord, DOMPDF, Simple QrCode</li>
+              <li>Maatwebsite Excel, WhatsApp API (Fonnte)</li>
+            </ul>
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-3">
+            <h3 class="font-medium text-fg mb-md">AI / ML & Other</h3>
+            <ul class="space-y-sm text-sm text-fg-muted">
+              <li>YOLOv8, PyTorch, FastAPI (model serving)</li>
+              <li>LLM integration (similarity, novelty analysis)</li>
+              <li>Flutter (mobile), Arduino/ESP32 (IoT)</li>
+              <li>MQTT, Face Recognition, Document Processing</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Projects (PT. Tazaka Elektrik Teknologi) -->
+      <section aria-labelledby="work-tazaka-title">
+        <h2 id="work-tazaka-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Work Projects — PT. Tazaka Elektrik Teknologi</h2>
+        <ul class="space-y-md text-sm">
+          <li class="prose"><strong>Brave Gym Management</strong> — Laravel, Vue.js, MySQL. Gym & member management system.</li>
+          <li class="prose"><strong>Scentplus Club</strong> — Laravel. Club membership system.</li>
+          <li class="prose"><strong>SMILeRS</strong> — Laravel. Internal system with date range filtering & reporting.</li>
+          <li class="prose"><strong>RupaKarir</strong> — Laravel. Career platform.</li>
+          <li class="prose"><strong>Cental Accounting</strong> — Laravel ERP. Accounting module: Chart of Accounts, kasbon, expense reports.</li>
+        </ul>
+      </section>
+
+      <!-- Work Projects (PT. Diantara / PT. NTI) -->
+      <section aria-labelledby="work-diantara-title">
+        <h2 id="work-diantara-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Work Projects — PT. Diantara / PT. NTI</h2>
+        <ul class="space-y-md text-sm">
+          <li class="prose"><strong>Accounting Frontend</strong> — Vue.js, Node.js. Document management & upload.</li>
+          <li class="prose"><strong>Accounting Backend API</strong> — Laravel. REST API for accounting system.</li>
+          <li class="prose"><strong>Modul Kain Makloon</strong> — SQL. BPKEM/DPKEM/LPKEMB expedition reporting.</li>
+        </ul>
+      </section>
+
+      <!-- Web Application Projects -->
+      <section aria-labelledby="web-projects-title">
+        <h2 id="web-projects-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Web Application Projects</h2>
+        <ul class="space-y-md text-sm">
+          <li class="prose"><strong>SIAKAD</strong> — Laravel 12, Tailwind CSS, Breeze. School academic information system.</li>
+          <li class="prose"><strong>SICERDAS</strong> — Laravel 12, Spatie Permission, WhatsApp API. Village online service system.</li>
+          <li class="prose"><strong>SIMANTAP</strong> — Laravel 12, AI similarity/novelty. Final project management system.</li>
+          <li class="prose"><strong>E-POS</strong> — Laravel, Bootstrap. Retail/MSME cashier application.</li>
+          <li class="prose"><strong>Marketplace Sunforus</strong> — Laravel. Online store.</li>
+          <li class="prose"><strong>Travel Booking Website</strong> — Laravel. Tour package booking.</li>
+        </ul>
+      </section>
+
+      <!-- API & Integration Projects -->
+      <section aria-labelledby="api-projects-title">
+        <h2 id="api-projects-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">API & Integration Projects</h2>
+        <ul class="space-y-md text-sm">
+          <li class="prose"><strong>API UKRI</strong> — Laravel, Sanctum. REST API for academic master data.</li>
+          <li class="prose"><strong>SSO UKRI</strong> — Laravel, OAuth2 Passport. Single Sign-On server.</li>
+          <li class="prose"><strong>Face Recognition Laravel</strong> — Laravel, Inertia.js, Vue.js. Face recognition & monitoring.</li>
+        </ul>
+      </section>
+
+      <!-- AI / Machine Learning Projects -->
+      <section aria-labelledby="ai-projects-title">
+        <h2 id="ai-projects-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">AI / Machine Learning Projects</h2>
+        <ul class="space-y-md text-sm">
+          <li class="prose"><strong>MBG Food Detector</strong> — YOLO, FastAPI, Flutter. Food detection & nutrition analysis.</li>
+          <li class="prose"><strong>Food Detection YOLOv8</strong> — Python, YOLOv8. Food detection model training.</li>
+          <li class="prose"><strong>Diabetes App</strong> — Flutter, Python, FastAPI, ML. Diabetes prediction & food tracking.</li>
+          <li class="prose"><strong>NutriScan (NOVA)</strong> — PyTorch Faster R-CNN, FastAPI. NOVA food classification.</li>
+          <li class="prose"><strong>ScholarCheck (Turnitin Checker Hub)</strong> — Python. Document similarity checking.</li>
+          <li class="prose"><strong>Similarity Apps</strong> — Python, AI. Text similarity & novelty testing.</li>
+        </ul>
+      </section>
+
+      <!-- Mobile & IoT Projects -->
+      <section aria-labelledby="mobile-iot-title">
+        <h2 id="mobile-iot-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Mobile & IoT Projects</h2>
+        <ul class="space-y-md text-sm">
+          <li class="prose"><strong>Nexanode / HydroFarm IoT</strong> — Flutter, MQTT. Hydroponic farm monitoring & control.</li>
+          <li class="prose"><strong>IR Servo</strong> — Arduino, ESP32. IR sensor + servo motor control.</li>
+        </ul>
+      </section>
+
+      <!-- Certifications -->
+      <section aria-labelledby="certs-title">
+        <h2 id="certs-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Certifications</h2>
+        <ul class="space-y-md text-sm">
+          <li class="prose"><strong>Full-Stack Web Developer: Toko Online</strong> — BuildWithAngga, August 2024. <a href="https://drive.google.com/file/d/19Gqu6ZpbAgZkqQgnZuuj6X_fkrsYfrtR/view?usp=sharing" target="_blank" rel="noopener" class="text-accent hover:underline">certificate</a></li>
+          <li class="prose"><strong>Full-Stack Website Developer</strong> — BuildWithAngga, August 2022. <a href="https://drive.google.com/file/d/1IoebjhnPuT_gZG4xSwrbelRdseudfJ2c/view?usp=drive_link" target="_blank" rel="noopener" class="text-accent hover:underline">certificate</a></li>
+          <li class="prose"><strong>Junior Web Developer</strong> — Digitalent KOMINFO, August 2022. <a href="https://drive.google.com/file/d/1MR36rOKXqfQbwqXMD5Eyd5O90bW3YaVt/view?usp=drive_link" target="_blank" rel="noopener" class="text-accent hover:underline">certificate</a></li>
+        </ul>
+      </section>
+
+      <!-- Languages -->
+      <section aria-labelledby="languages-title">
+        <h2 id="languages-title" class="text-xl font-semibold text-fg border-b border-border pb-sm mb-lg">Languages</h2>
+        <ul class="space-y-sm text-sm text-fg-muted">
+          <li>Indonesian — Active</li>
+          <li>English — Passive</li>
+        </ul>
+      </section>
+
     </div>
-  </section>
+
+    <!-- Download CTA -->
+    <section class="mt-3xl" aria-labelledby="download-title">
+      <div class="max-w-4xl mx-auto px-4 md:px-10 text-center">
+        <h2 id="download-title" class="text-2xl md:text-3xl font-bold text-fg mb-md">Download Full CV</h2>
+        <p class="text-fg-muted mb-xl max-w-xl mx-auto">Complete document with all details, formatted for printing and sharing.</p>
+        <a href="assets/document/CV Raafi Syarahil Azhar.pdf" download class="btn-primary inline-flex items-center gap-2">
+          Download PDF
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer class="text-gray-800 mt-16">
-    <div class="container mx-auto px-6 md:px-12 py-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <p class="text-sm text-gray-600">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
+  <footer class="border-t border-border py-xl" role="contentinfo">
+    <div class="max-w-4xl mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-4">
+          <p class="font-semibold text-fg">Raafi Syarahil Azhar</p>
+          <p class="text-sm text-fg-subtle mt-1">Backend Developer — Laravel, PHP, Python</p>
         </div>
-        <div class="flex space-x-4">
-          <a href="https://github.com/raafisyarahilazhar" target="_blank" class="hover:text-yellow-600 transition" aria-label="GitHub">
-            <i data-feather="github" class="w-5 h-5"></i>
+        <nav aria-label="Footer links" class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-center gap-4 text-sm">
+          <a href="index.html" class="text-fg-subtle hover:text-fg transition-colors">Home</a>
+          <a href="portfolio.html" class="text-fg-subtle hover:text-fg transition-colors">Projects</a>
+        </nav>
+        <div class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-end gap-4">
+          <a href="https://github.com/raafisyarahilazhar" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="GitHub">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
-          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" class="hover:text-yellow-600 transition" aria-label="LinkedIn">
-            <i data-feather="linkedin" class="w-5 h-5"></i>
+          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="LinkedIn">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
-          <a href="mailto:r.syarahilazhar@gmail.com" class="hover:text-yellow-600 transition" aria-label="Email">
-            <i data-feather="mail" class="w-5 h-5"></i>
+          <a href="mailto:r.syarahilazhar@gmail.com" class="text-fg-subtle hover:text-fg transition-colors" aria-label="Email">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </a>
         </div>
       </div>
+      <div class="divider mt-xl mx-auto" style="max-width: 72rem;"></div>
+      <p class="text-xs text-fg-subtle text-center mt-lg">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    feather.replace();
-  </script>
 </body>
-
 </html>

@@ -1,102 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="transition-colors duration-150">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIAKAD - Project Preview</title>
+  <title>SIAKAD — Project Detail</title>
   <link rel="icon" type="image/png" href="assets/image/R.png">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <style>
-    .gradient-bg {
-      background: linear-gradient(135deg, #fff4c2, #ffe680);
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0a',
+            'bg-elevated': '#141414',
+            border: '#262626',
+            'border-hover': '#3d3d3d',
+            fg: '#fafafa',
+            'fg-muted': '#a3a3a3',
+            'fg-subtle': '#737373',
+            accent: '#fbbf24',
+            'accent-hover': '#f59e0b',
+            'accent-dim': '#78350f',
+            success: '#4ade80',
+            warning: '#fbbf24',
+            error: '#f87171',
+          },
+          fontFamily: {
+            sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Menlo', 'monospace'],
+          },
+          spacing: {
+            'xs': '4px', 'sm': '8px', 'md': '16px', 'lg': '24px', 'xl': '32px', '2xl': '48px', '3xl': '72px',
+          },
+          borderRadius: {
+            'sm': '4px', 'md': '8px', 'lg': '16px',
+          },
+          boxShadow: {
+            'card': '0 0 0 1px rgb(255 255 255 / 0.03), 0 4px 12px rgb(0 0 0 / 0.4)',
+            'focus': '0 0 0 2px #fbbf24',
+          },
+          transitionDuration: {
+            'fast': '150ms',
+          },
+          transitionTimingFunction: {
+            'ease': 'ease',
+          },
+        }
+      }
     }
+  </script>
+  <style>
+    .btn-primary { @apply bg-accent text-bg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-accent-hover active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-secondary { @apply border border-border-hover text-fg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-bg-elevated hover:border-accent active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-ghost { @apply text-fg-muted px-3 py-2 font-medium transition-colors duration-fast hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .card { @apply bg-bg-elevated border border-border rounded-md p-4 md:p-5; }
+    .card-featured { @apply bg-bg-elevated border border-border rounded-lg shadow-card p-6 md:p-8; }
+    .nav-link { @apply text-fg-muted font-medium transition-colors duration-fast hover:text-fg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-sm px-2 py-1 -mx-1; }
+    .nav-link-active { @apply text-accent font-semibold; }
+    .section-title { @apply text-2xl md:text-3xl font-bold text-fg tracking-tight; }
+    .section-desc { @apply text-fg-muted max-w-2xl mt-2 text-lg leading-relaxed; }
+    .prose { @apply text-fg-muted leading-relaxed; }
+    .prose strong { @apply text-fg font-semibold; }
+    .tag { @apply px-2 py-0.5 text-xs font-medium rounded-sm bg-accent-dim text-accent border border-accent/30; }
+    .icon { @apply inline-block align-middle; width: 1em; height: 1em; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-md { width: 20px; height: 20px; }
+    .icon-lg { width: 24px; height: 24px; }
+    .divider { @apply h-px bg-border w-full; }
   </style>
+  <link rel="stylesheet" href="assets/chat-ui.css">
 </head>
+<body class="bg-bg text-fg min-h-screen font-sans antialiased transition-colors duration-150">
 
-<body class="bg-gradient-to-br from-yellow-300 via-yellow-150 to-white text-gray-800 min-h-screen">
-  <header class="bg-white/80 backdrop-blur shadow-md py-6 sticky top-0 z-10">
-    <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-800">SIAKAD</h1>
-      <a href="index.html" class="text-yellow-600 font-medium hover:underline transition">← Back to Home</a>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-bg/80 border-b border-border transition-colors duration-150">
+    <div class="max-w-4xl mx-auto px-4 md:px-10">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="index.html" class="text-xl font-bold text-fg" aria-label="Raafi Syarahil Azhar — Home">Raafi Syarahil Azhar</a>
+        <nav aria-label="Main navigation">
+          <ul class="flex items-center gap-1 md:gap-4">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Projects</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main class="py-12">
-    <div class="container mx-auto px-6 md:px-12">
-      <div class="bg-white/90 rounded-2xl shadow-xl p-8 md:p-12">
-        <h2 class="text-4xl font-extrabold mb-10">🎓 Project Overview</h2>
-        <p class="mb-8 text-lg leading-relaxed text-gray-700">
-          SIAKAD (Sistem Informasi Akademik) is a web-based Academic Information System that digitalizes school administration, including student and teacher data management, class scheduling, attendance tracking, grade processing, and report access through role-based accounts.
-        </p>
+  <main class="pb-3xl">
 
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="text-2xl font-semibold mb-3 text-gray-800">🛠️ Key Features</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>Role-based authentication (Admin, Teacher, Student, Homeroom Teacher)</li>
-              <li>Student and teacher master data management</li>
-              <li>Teaching schedule and student class schedule access</li>
-              <li>Attendance input and monitoring</li>
-              <li>Grade entry and student report (rapor) viewing</li>
-              <li>Student promotion (class advancement) workflow</li>
-              <li>Excel import for student and teacher data</li>
-              <li>Personal profile and password management</li>
+    <!-- Project Header -->
+    <section aria-labelledby="project-title" class="pt-xl pb-lg">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <a href="portfolio.html" class="btn-ghost text-sm inline-flex items-center gap-1 mb-lg" aria-label="Back to all projects">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          All Projects
+        </a>
+        <header>
+          <h1 id="project-title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-fg tracking-tight">SIAKAD</h1>
+          <p class="mt-md text-lg md:text-xl text-fg-muted max-w-3xl">Academic Information System — scheduling, attendance, grades, student promotion, Excel import, role-based access for schools.</p>
+          <div class="mt-lg flex flex-wrap gap-sm text-sm">
+            <span class="tag">Laravel 12</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Laravel Breeze</span>
+            <span class="tag">Maatwebsite Excel</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Vite</span>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section aria-labelledby="overview-title" class="pb-2xl">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <h2 id="overview-title" class="section-title">Overview</h2>
+        <div class="mt-lg prose max-w-none">
+          <p class="mb-lg">SIAKAD (Sistem Informasi Akademik) is a web-based Academic Information System that digitalizes school administration. It covers student and teacher data management, class scheduling, attendance tracking, grade processing, and report access through role-based accounts (Admin, Teacher, Student, Homeroom Teacher).</p>
+          <p class="mb-lg">The system handles the full academic lifecycle: master data management with Excel import for bulk student/teacher onboarding, teaching schedules accessible by role, daily attendance input and monitoring, grade entry with automated report card (rapor) generation, and student promotion workflows for class advancement.</p>
+          <p>Built with Laravel 12 and Tailwind CSS using Breeze for authentication, optimized for school administrators and teachers who need a reliable, straightforward system.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features & Tech Stack -->
+    <section aria-labelledby="details-title" class="pb-2xl">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <h2 id="details-title" class="section-title">Features & Technology</h2>
+        <div class="mt-xl grid grid-cols-12 gap-2xl">
+          <div class="col-span-12 md:col-span-6">
+            <h3 class="text-lg font-semibold text-fg mb-md">Key Features</h3>
+            <ul class="space-y-md text-sm prose">
+              <li><strong>Role-based authentication</strong> — Admin, Teacher, Student, Homeroom Teacher (Laravel Breeze)</li>
+              <li><strong>Master data management</strong> — Student and teacher records with CRUD</li>
+              <li><strong>Schedule management</strong> — Teaching schedules and student class schedules</li>
+              <li><strong>Attendance tracking</strong> — Daily input and monitoring with summaries</li>
+              <li><strong>Grade processing</strong> — Entry, calculation, and student report (rapor) viewing</li>
+              <li><strong>Student promotion</strong> — Class advancement workflow at year-end</li>
+              <li><strong>Excel import</strong> — Bulk import for student and teacher data (Maatwebsite Excel)</li>
+              <li><strong>Profile management</strong> — Personal profile and password management per role</li>
             </ul>
           </div>
-          <div>
-            <h3 class="text-2xl font-semibold mb-3 text-gray-800">💻 Technology</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>PHP 8.2</li>
-              <li>Laravel 12</li>
-              <li>Blade Template Engine</li>
-              <li>Tailwind CSS</li>
-              <li>Vite</li>
-              <li>MySQL Database</li>
-              <li>Laravel Breeze (Authentication)</li>
-              <li>Maatwebsite Excel (Data Import)</li>
+          <div class="col-span-12 md:col-span-6">
+            <h3 class="text-lg font-semibold text-fg mb-md">Technology Stack</h3>
+            <ul class="space-y-md text-sm prose">
+              <li><strong>Framework:</strong> Laravel 12 (PHP 8.2)</li>
+              <li><strong>Frontend:</strong> Blade + Tailwind CSS, Vite asset bundling</li>
+              <li><strong>Authentication:</strong> Laravel Breeze</li>
+              <li><strong>Database:</strong> MySQL with Eloquent ORM</li>
+              <li><strong>Import/Export:</strong> Maatwebsite Excel for bulk data</li>
+              <li><strong>Build:</strong> Vite for frontend assets</li>
             </ul>
           </div>
         </div>
-
-        <div class="mt-12">
-          <h3 class="text-2xl font-semibold mb-4 text-gray-800">🖼️ Gallery Preview</h3>
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
-            <img src="assets/image/siakad1.jpg" alt="SIAKAD Dashboard" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition" />
-            <img src="assets/image/siakad2.jpg" alt="Attendance Module" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition" />
-            <img src="assets/image/siakad3.jpg" alt="Grades Module" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition" />
-            <img src="assets/image/siakad4.jpg" alt="Student Report Page" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition" />
-          </div>
-          <a href="#" target="_blank"
-             class="inline-block bg-yellow-500 text-white text-lg font-medium px-6 py-3 rounded-lg hover:bg-yellow-600 transition">
-            🔗 Visit Project
-          </a>
-        </div>        
       </div>
-    </div>
+    </section>
+
+    <!-- Gallery -->
+    <section aria-labelledby="gallery-title" class="pb-2xl">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <h2 id="gallery-title" class="section-title">Screenshots</h2>
+        <div class="mt-xl grid grid-cols-12 gap-4">
+          <img src="assets/image/siakad1.jpg" alt="SIAKAD admin dashboard" class="col-span-12 md:col-span-6 lg:col-span-3 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/siakad2.jpg" alt="SIAKAD attendance module" class="col-span-12 md:col-span-6 lg:col-span-3 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/siakad3.jpg" alt="SIAKAD grades module" class="col-span-12 md:col-span-6 lg:col-span-3 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/siakad4.jpg" alt="SIAKAD student report page" class="col-span-12 md:col-span-6 lg:col-span-3 aspect-[4/3] object-cover rounded-md">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pt-lg" aria-labelledby="cta-title">
+      <div class="max-w-4xl mx-auto px-4 md:px-10 text-center">
+        <span class="btn-secondary inline-flex items-center gap-2" aria-disabled="true">
+          Project Not Publicly Accessible
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </span>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
-  <footer class="text-gray-800">
-    <div class="container mx-auto px-6 md:px-12 py-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <p class="text-sm text-gray-600">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
+  <footer class="border-t border-border py-xl" role="contentinfo">
+    <div class="max-w-4xl mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-4">
+          <p class="font-semibold text-fg">Raafi Syarahil Azhar</p>
+          <p class="text-sm text-fg-subtle mt-1">Backend Developer — Laravel, PHP, Python</p>
         </div>
-        <div class="flex space-x-4">
-          <a href="https://github.com/raafisyarahilazhar" target="_blank" class="hover:text-yellow-600 transition" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        <nav aria-label="Footer links" class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-center gap-4 text-sm">
+          <a href="index.html" class="text-fg-subtle hover:text-fg transition-colors">Home</a>
+          <a href="portfolio.html" class="text-fg-subtle hover:text-fg transition-colors">Projects</a>
+          <a href="cv.html" class="text-fg-subtle hover:text-fg transition-colors">CV</a>
+        </nav>
+        <div class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-end gap-4">
+          <a href="https://github.com/raafisyarahilazhar" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="GitHub">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
-          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" class="hover:text-yellow-600 transition" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="LinkedIn">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
-          <a href="mailto:r.syarahilazhar@gmail.com" class="hover:text-yellow-600 transition" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <a href="mailto:r.syarahilazhar@gmail.com" class="text-fg-subtle hover:text-fg transition-colors" aria-label="Email">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </a>
         </div>
       </div>
+      <div class="divider mt-xl mx-auto" style="max-width: 72rem;"></div>
+      <p class="text-xs text-fg-subtle text-center mt-lg">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
     </div>
   </footer>
-</body>
 
+</body>
 </html>
