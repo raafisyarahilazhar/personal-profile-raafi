@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-150">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catering Dapur Kita — Project Detail</title>
+  <link rel="icon" type="image/png" href="assets/image/R.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0a',
+            'bg-elevated': '#141414',
+            border: '#262626',
+            'border-hover': '#3d3d3d',
+            fg: '#fafafa',
+            'fg-muted': '#a3a3a3',
+            'fg-subtle': '#737373',
+            accent: '#fbbf24',
+            'accent-hover': '#f59e0b',
+            'accent-dim': '#78350f',
+            success: '#4ade80',
+            warning: '#fbbf24',
+            error: '#f87171',
+          },
+          fontFamily: {
+            sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Menlo', 'monospace'],
+          },
+          spacing: {
+            'xs': '4px', 'sm': '8px', 'md': '16px', 'lg': '24px', 'xl': '32px', '2xl': '48px', '3xl': '72px',
+          },
+          borderRadius: {
+            'sm': '4px', 'md': '8px', 'lg': '16px',
+          },
+          boxShadow: {
+            'card': '0 0 0 1px rgb(255 255 255 / 0.03), 0 4px 12px rgb(0 0 0 / 0.4)',
+            'focus': '0 0 0 2px #fbbf24',
+          },
+          transitionDuration: {
+            'fast': '150ms',
+          },
+          transitionTimingFunction: {
+            'ease': 'ease',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .btn-primary { @apply bg-accent text-bg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-accent-hover active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-secondary { @apply border border-border-hover text-fg px-5 py-2.5 rounded-sm font-medium transition-colors duration-fast hover:bg-bg-elevated hover:border-accent active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .btn-ghost { @apply text-fg-muted px-3 py-2 font-medium transition-colors duration-fast hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+    .card { @apply bg-bg-elevated border border-border rounded-md p-4 md:p-5; }
+    .card-featured { @apply bg-bg-elevated border border-border rounded-lg shadow-card p-6 md:p-8; }
+    .nav-link { @apply text-fg-muted font-medium transition-colors duration-fast hover:text-fg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-sm px-2 py-1 -mx-1; }
+    .nav-link-active { @apply text-accent font-semibold; }
+    .section-title { @apply text-2xl md:text-3xl font-bold text-fg tracking-tight; }
+    .section-desc { @apply text-fg-muted max-w-2xl mt-2 text-lg leading-relaxed; }
+    .prose { @apply text-fg-muted leading-relaxed; }
+    .prose strong { @apply text-fg font-semibold; }
+    .tag { @apply px-2 py-0.5 text-xs font-medium rounded-sm bg-accent-dim text-accent border border-accent/30; }
+    .icon { @apply inline-block align-middle; width: 1em; height: 1em; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-md { width: 20px; height: 20px; }
+    .icon-lg { width: 24px; height: 24px; }
+    .divider { @apply h-px bg-border w-full; }
+  </style>
+  <link rel="stylesheet" href="assets/chat-ui.css">
+</head>
+<body class="bg-bg text-fg min-h-screen font-sans antialiased transition-colors duration-150">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-bg/80 border-b border-border transition-colors duration-150">
+    <div class="max-w-4xl mx-auto px-4 md:px-10">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="index.html" class="text-xl font-bold text-fg" aria-label="Raafi Syarahil Azhar — Home">Raafi Syarahil Azhar</a>
+        <nav aria-label="Main navigation">
+          <ul class="flex items-center gap-1 md:gap-4">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Projects</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="pb-3xl">
+
+    <!-- Project Header -->
+    <section aria-labelledby="project-title" class="pt-xl pb-lg">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <a href="portfolio.html" class="btn-ghost text-sm inline-flex items-center gap-1 mb-lg" aria-label="Back to all projects">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          All Projects
+        </a>
+        <header>
+          <h1 id="project-title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-fg tracking-tight">Catering Dapur Kita</h1>
+          <p class="mt-md text-lg md:text-xl text-fg-muted max-w-3xl">Company profile website for a halal catering and aqiqah service in Bandung — services, menu, aqiqah packages, and contact.</p>
+          <div class="mt-lg flex flex-wrap gap-sm text-sm">
+            <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Tailwind</span>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section aria-labelledby="overview-title" class="pb-2xl">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <h2 id="overview-title" class="section-title">Overview</h2>
+        <div class="mt-lg prose max-w-none">
+          <p class="mb-lg">A company profile website for Catering Dapur Kita, a halal catering and aqiqah business based in Antapani, Bandung, and active since 2012. The site introduces the company's story, vision and mission, and the full range of services it offers, from rice boxes and buffets to daily office catering, Ramadhan packages, roasted lamb, and aqiqah.</p>
+          <p class="mb-lg">Visitors can browse a searchable menu of 19 items filtered by package type, review aqiqah packages with special and regular pricing, and get in touch directly through WhatsApp, email, or Instagram to ask about orders and budget-friendly custom requests.</p>
+          <p>Built with HTML, CSS, and Tailwind CSS, featuring a clean, responsive layout designed to present the business professionally and turn visitors into customer inquiries.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features & Tech Stack -->
+    <section aria-labelledby="details-title" class="pb-2xl">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <h2 id="details-title" class="section-title">Features & Technology</h2>
+        <div class="mt-xl grid grid-cols-12 gap-2xl">
+          <div class="col-span-12 md:col-span-6">
+            <h3 class="text-lg font-semibold text-fg mb-md">Key Features</h3>
+            <ul class="space-y-md text-sm prose">
+              <li><strong>Company profile</strong> — Brief history since 2012, vision and mission, and core values: halal, hygienic, tasty, and responsive</li>
+              <li><strong>Service showcase</strong> — Buffet, rice box, daily and office catering, roasted lamb, aqiqah, group meal packages, Ramadhan, and custom requests</li>
+              <li><strong>Searchable menu</strong> — Search and filter 19 menu items by package with contents and pricing</li>
+              <li><strong>Aqiqah packages</strong> — Special and regular price tables by lamb type and number of boxes</li>
+              <li><strong>Contact channels</strong> — WhatsApp, email, Instagram, and address in one place</li>
+              <li><strong>Mobile-friendly</strong> — Responsive design for all devices</li>
+            </ul>
+          </div>
+          <div class="col-span-12 md:col-span-6">
+            <h3 class="text-lg font-semibold text-fg mb-md">Technology Stack</h3>
+            <ul class="space-y-md text-sm prose">
+              <li><strong>Markup:</strong> HTML</li>
+              <li><strong>Styling:</strong> CSS and Tailwind CSS (responsive utilities)</li>
+              <li><strong>Type:</strong> Static company profile website</li>
+              <li><strong>Structure:</strong> Single-page layout with sections for about, services, menu, aqiqah, and contact</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section aria-labelledby="gallery-title" class="pb-2xl">
+      <div class="max-w-4xl mx-auto px-4 md:px-10">
+        <h2 id="gallery-title" class="section-title">Screenshots</h2>
+        <div class="mt-xl grid grid-cols-12 gap-4">
+          <img src="assets/image/cateringdapurkita (1).png" alt="Catering Dapur Kita website preview 1" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/cateringdapurkita (2).png" alt="Catering Dapur Kita website preview 2" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/cateringdapurkita (3).png" alt="Catering Dapur Kita website preview 3" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/cateringdapurkita (4).png" alt="Catering Dapur Kita website preview 4" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pt-lg" aria-labelledby="cta-title">
+      <div class="max-w-4xl mx-auto px-4 md:px-10 text-center">
+        <a href="https://cateringdapurkita.netlify.app/" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2">
+          Visit Live Project
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border py-xl" role="contentinfo">
+    <div class="max-w-4xl mx-auto px-4 md:px-10">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-4">
+          <p class="font-semibold text-fg">Raafi Syarahil Azhar</p>
+          <p class="text-sm text-fg-subtle mt-1">Backend Developer — Laravel, PHP, Python</p>
+        </div>
+        <nav aria-label="Footer links" class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-center gap-4 text-sm">
+          <a href="index.html" class="text-fg-subtle hover:text-fg transition-colors">Home</a>
+          <a href="portfolio.html" class="text-fg-subtle hover:text-fg transition-colors">Projects</a>
+          <a href="cv.html" class="text-fg-subtle hover:text-fg transition-colors">CV</a>
+        </nav>
+        <div class="col-span-12 lg:col-span-4 flex flex-wrap justify-center lg:justify-end gap-4">
+          <a href="https://github.com/raafisyarahilazhar" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="GitHub">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="https://linkedin.com/in/raafi-syarahil-azhar-8a6605277" target="_blank" rel="noopener" class="text-fg-subtle hover:text-fg transition-colors" aria-label="LinkedIn">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="mailto:r.syarahilazhar@gmail.com" class="text-fg-subtle hover:text-fg transition-colors" aria-label="Email">
+            <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+      <div class="divider mt-xl mx-auto" style="max-width: 72rem;"></div>
+      <p class="text-xs text-fg-subtle text-center mt-lg">&copy; 2026 Raafi Syarahil Azhar. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
