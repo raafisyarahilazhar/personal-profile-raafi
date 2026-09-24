@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Booking Website — Project Detail</title>
+  <title>Master Data API UKRI — Project Detail</title>
   <link rel="icon" type="image/png" href="assets/image/R.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -98,11 +98,12 @@
           All Projects
         </a>
         <header>
-          <h1 id="project-title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-fg tracking-tight">Travel Booking Website</h1>
-          <p class="mt-md text-lg md:text-xl text-fg-muted max-w-3xl">Tour package booking platform — destination search, booking system, contact form, admin CRUD panel.</p>
+          <h1 id="project-title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-fg tracking-tight">Master Data API UKRI</h1>
+          <p class="mt-md text-lg md:text-xl text-fg-muted max-w-3xl">Read-only REST API for academic master data — faculties, study programs, cohorts, lecturers, and students — with token-based access.</p>
           <div class="mt-lg flex flex-wrap gap-sm text-sm">
             <span class="tag">Laravel</span>
-            <span class="tag">Bootstrap</span>
+            <span class="tag">REST API</span>
+            <span class="tag">Sanctum</span>
             <span class="tag">MySQL</span>
           </div>
         </header>
@@ -114,9 +115,9 @@
       <div class="max-w-4xl mx-auto px-4 md:px-10">
         <h2 id="overview-title" class="section-title">Overview</h2>
         <div class="mt-lg prose max-w-none">
-          <p class="mb-lg">A website for ordering and information on tour packages with destination search features and a booking system. Customers browse available tour packages, view details including itinerary and pricing, and submit booking requests through the platform.</p>
-          <p class="mb-lg">The admin panel provides content management for tour packages (CRUD: create, read, update, delete), booking request handling, and a contact form for inquiries. The system is designed for travel agencies or tour operators needing a straightforward web presence with booking capability.</p>
-          <p>Built with Laravel and Bootstrap, featuring a clean public-facing site and a functional admin backend for content and booking management.</p>
+          <p class="mb-lg">Master Data API UKRI is a standalone REST API that exposes UKRI's academic master data so other systems can consume it instead of maintaining their own copies. It covers six resources: faculties, study programs, cohorts, specializations, lecturers, and students.</p>
+          <p class="mb-lg">The API is strictly read-only, offering GET endpoints only. It reads directly from the source database rather than duplicating data, so the source system remains the only one that creates or changes master data. Because the data includes personal information, every request must carry an access token issued through Laravel Sanctum.</p>
+          <p>Built with Laravel as a standalone service, it provides a clean, versioned contract for internal systems that need reliable access to shared academic data.</p>
         </div>
       </div>
     </section>
@@ -129,21 +130,22 @@
           <div class="col-span-12 md:col-span-6">
             <h3 class="text-lg font-semibold text-fg mb-md">Key Features</h3>
             <ul class="space-y-md text-sm prose">
-              <li><strong>Tour package listing</strong> — Browse packages with images, descriptions, pricing, duration</li>
-              <li><strong>Destination search</strong> — Filter and search packages by location, date, price range</li>
-              <li><strong>Booking system</strong> — Customer submission with contact details and package selection</li>
-              <li><strong>Contact form</strong> — General inquiries routed to admin</li>
-              <li><strong>Admin CRUD panel</strong> — Full management of packages, bookings, inquiries</li>
-              <li><strong>Mobile-friendly</strong> — Responsive design for all devices</li>
+              <li><strong>Six master data resources</strong> — Faculties, study programs, cohorts, specializations, lecturers, and students</li>
+              <li><strong>Read-only endpoints</strong> — GET requests only; data changes stay in the source system</li>
+              <li><strong>Token-based access</strong> — No public endpoints; every request requires an API token</li>
+              <li><strong>No data duplication</strong> — Reads directly from the existing source database</li>
+              <li><strong>Versioned API</strong> — Endpoints grouped under /api/v1</li>
+              <li><strong>Built for reuse</strong> — Designed to be consumed by other internal systems</li>
             </ul>
           </div>
           <div class="col-span-12 md:col-span-6">
             <h3 class="text-lg font-semibold text-fg mb-md">Technology Stack</h3>
             <ul class="space-y-md text-sm prose">
               <li><strong>Framework:</strong> Laravel</li>
-              <li><strong>Frontend:</strong> Bootstrap (responsive components)</li>
-              <li><strong>Database:</strong> MySQL</li>
-              <li><strong>Architecture:</strong> MVC with admin panel separation</li>
+              <li><strong>API Style:</strong> REST with versioned routes (/api/v1)</li>
+              <li><strong>Authentication:</strong> Laravel Sanctum (token-based)</li>
+              <li><strong>Database:</strong> MySQL (existing database, read-only usage)</li>
+              <li><strong>Architecture:</strong> Standalone read-only service</li>
             </ul>
           </div>
         </div>
@@ -155,8 +157,10 @@
       <div class="max-w-4xl mx-auto px-4 md:px-10">
         <h2 id="gallery-title" class="section-title">Screenshots</h2>
         <div class="mt-xl grid grid-cols-12 gap-4">
-          <img src="assets/image/travel.png" alt="Travel booking homepage" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
-          <img src="assets/image/travel2.png" alt="Travel booking package detail" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/api-ukri (1).png" alt="Master Data API UKRI application preview 1" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/api-ukri (2).png" alt="Master Data API UKRI application preview 2" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/api-ukri (3).png" alt="Master Data API UKRI application preview 3" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/api-ukri (4).png" alt="Master Data API UKRI application preview 4" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
         </div>
       </div>
     </section>

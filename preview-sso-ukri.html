@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Booking Website — Project Detail</title>
+  <title>Single Sign On UKRI — Project Detail</title>
   <link rel="icon" type="image/png" href="assets/image/R.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -98,11 +98,12 @@
           All Projects
         </a>
         <header>
-          <h1 id="project-title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-fg tracking-tight">Travel Booking Website</h1>
-          <p class="mt-md text-lg md:text-xl text-fg-muted max-w-3xl">Tour package booking platform — destination search, booking system, contact form, admin CRUD panel.</p>
+          <h1 id="project-title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-fg tracking-tight">Single Sign On UKRI</h1>
+          <p class="mt-md text-lg md:text-xl text-fg-muted max-w-3xl">Centralized authentication system for UKRI applications — one username-based login for all connected systems.</p>
           <div class="mt-lg flex flex-wrap gap-sm text-sm">
             <span class="tag">Laravel</span>
-            <span class="tag">Bootstrap</span>
+            <span class="tag">Blade</span>
+            <span class="tag">OAuth2</span>
             <span class="tag">MySQL</span>
           </div>
         </header>
@@ -114,9 +115,9 @@
       <div class="max-w-4xl mx-auto px-4 md:px-10">
         <h2 id="overview-title" class="section-title">Overview</h2>
         <div class="mt-lg prose max-w-none">
-          <p class="mb-lg">A website for ordering and information on tour packages with destination search features and a booking system. Customers browse available tour packages, view details including itinerary and pricing, and submit booking requests through the platform.</p>
-          <p class="mb-lg">The admin panel provides content management for tour packages (CRUD: create, read, update, delete), booking request handling, and a contact form for inquiries. The system is designed for travel agencies or tour operators needing a straightforward web presence with booking capability.</p>
-          <p>Built with Laravel and Bootstrap, featuring a clean public-facing site and a functional admin backend for content and booking management.</p>
+          <p class="mb-lg">UKRI Single Sign On is a centralized authentication system for UKRI applications. Users sign in through one login page with their username, so authentication is handled in a single, consistent place instead of being rebuilt in every application.</p>
+          <p class="mb-lg">Rather than keeping separate accounts for each application, the system relies on a single, centralized set of user records. This keeps user data consistent, avoids duplicated accounts across systems, and limits database access to what authentication needs.</p>
+          <p>Built with Laravel and Blade templates styled with Bootstrap, the login page follows UKRI branding in a clean, card-based layout that combines the institution logo and a simple username and password form.</p>
         </div>
       </div>
     </section>
@@ -129,21 +130,20 @@
           <div class="col-span-12 md:col-span-6">
             <h3 class="text-lg font-semibold text-fg mb-md">Key Features</h3>
             <ul class="space-y-md text-sm prose">
-              <li><strong>Tour package listing</strong> — Browse packages with images, descriptions, pricing, duration</li>
-              <li><strong>Destination search</strong> — Filter and search packages by location, date, price range</li>
-              <li><strong>Booking system</strong> — Customer submission with contact details and package selection</li>
-              <li><strong>Contact form</strong> — General inquiries routed to admin</li>
-              <li><strong>Admin CRUD panel</strong> — Full management of packages, bookings, inquiries</li>
-              <li><strong>Mobile-friendly</strong> — Responsive design for all devices</li>
+              <li><strong>Centralized login</strong> — A single authentication point with UKRI branding</li>
+              <li><strong>Username-based sign in</strong> — Users log in with a username instead of an email address</li>
+              <li><strong>Single user source</strong> — Relies on centralized user records with no duplicated accounts</li>
+              <li><strong>Persistent sessions</strong> — Remember-me support through a remember token</li>
+              <li><strong>Clean login interface</strong> — Card-based form with UKRI logo and branding</li>
             </ul>
           </div>
           <div class="col-span-12 md:col-span-6">
             <h3 class="text-lg font-semibold text-fg mb-md">Technology Stack</h3>
             <ul class="space-y-md text-sm prose">
               <li><strong>Framework:</strong> Laravel</li>
-              <li><strong>Frontend:</strong> Bootstrap (responsive components)</li>
+              <li><strong>Frontend:</strong> Blade templates with Bootstrap</li>
               <li><strong>Database:</strong> MySQL</li>
-              <li><strong>Architecture:</strong> MVC with admin panel separation</li>
+              <li><strong>Architecture:</strong> Centralized authentication service</li>
             </ul>
           </div>
         </div>
@@ -155,8 +155,9 @@
       <div class="max-w-4xl mx-auto px-4 md:px-10">
         <h2 id="gallery-title" class="section-title">Screenshots</h2>
         <div class="mt-xl grid grid-cols-12 gap-4">
-          <img src="assets/image/travel.png" alt="Travel booking homepage" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
-          <img src="assets/image/travel2.png" alt="Travel booking package detail" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/sso-ukri (1).png" alt="UKRI Single Sign On application preview 1" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/sso-ukri (2).png" alt="UKRI Single Sign On application preview 2" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
+          <img src="assets/image/sso-ukri (3).png" alt="UKRI Single Sign On application preview 3" class="col-span-12 md:col-span-6 lg:col-span-6 aspect-[4/3] object-cover rounded-md">
         </div>
       </div>
     </section>
