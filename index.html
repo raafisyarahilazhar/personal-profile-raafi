@@ -161,6 +161,7 @@
           <ul class="flex items-center gap-1 md:gap-4">
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#activities" class="nav-link">Activities</a></li>
             <li><a href="cv.html" class="nav-link">CV</a></li>
             <li><a href="portfolio.html" class="btn-primary text-sm px-4 py-2">All Work</a></li>
           </ul>
@@ -210,7 +211,7 @@
           <div class="col-span-12 lg:col-span-8">
             <header class="section-header">
               <h2 id="projects-title" class="section-title">Selected Projects</h2>
-              <p class="section-desc">A selection of systems focused on digital commerce, travel, and intelligent academic workflows.</p>
+              <p class="section-desc">A selection of projects spanning digital commerce, intelligent academic workflows, and business web presence.</p>
             </header>
           </div>
           <div class="col-span-12 lg:col-span-4 self-end lg:self-center text-right lg:text-left">
@@ -227,7 +228,7 @@
 
         <div class="grid grid-cols-12 gap-6">
           <!-- Marketplace Sunforus -->
-          <article class="col-span-12 lg:col-span-7 card-featured group">
+          <article class="col-span-12 card-featured group">
             <div class="grid grid-cols-12 gap-6 items-center">
               <div class="col-span-12 lg:col-span-7 min-w-0">
                 <p class="text-xs font-bold tracking-[0.18em] uppercase text-accent mb-3">Featured Project</p>
@@ -263,7 +264,7 @@
           </article>
 
           <!-- SIMANTAP -->
-          <article class="col-span-12 lg:col-span-5 project-card">
+          <article class="col-span-12 md:col-span-6 project-card">
             <div class="image-wrapper mb-5 group-hover:ring-1 group-hover:ring-accent/30 transition-all duration-normal">
               <img src="assets/image/simantap (1).png" alt="SIMANTAP academic proposal management interface" class="w-full aspect-[4/3] object-cover">
             </div>
@@ -281,6 +282,33 @@
               <span class="tag">LLM</span>
             </div>
             <a href="preview-simantap.html" class="btn-ghost text-sm inline-flex items-center gap-1.5 group">
+              View Details
+              <svg class="icon icon-sm group-hover:translate-x-1 transition-transform duration-fast" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Catering Dapur Kita -->
+          <article class="col-span-12 md:col-span-6 project-card">
+            <div class="image-wrapper mb-5 group-hover:ring-1 group-hover:ring-accent/30 transition-all duration-normal">
+              <img src="assets/image/cateringdapurkita (1).png" alt="Catering Dapur Kita company profile website" class="w-full aspect-[4/3] object-cover">
+            </div>
+            <p class="text-xs font-bold tracking-[0.18em] uppercase text-accent mb-2">Company Profile</p>
+            <h3 class="text-xl md:text-2xl font-bold text-fg mb-2 group-hover:text-accent transition-colors duration-fast">
+              Catering Dapur Kita
+            </h3>
+            <p class="text-sm md:text-base text-fg-muted mb-4">
+              Company profile website for a halal catering and aqiqah service in Bandung — services, menu, aqiqah packages, and contact.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Tailwind</span>
+            </div>
+            <a href="preview-catering-dapur-kita.html" class="btn-ghost text-sm inline-flex items-center gap-1.5 group">
               View Details
               <svg class="icon icon-sm group-hover:translate-x-1 transition-transform duration-fast" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -403,6 +431,113 @@
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Activities & Documentation -->
+    <style>
+      .act-frame { position: relative; margin-right: 14px; margin-bottom: 14px; }
+      .act-frame::before {
+        content: "";
+        position: absolute;
+        top: 14px; left: 14px; right: -14px; bottom: -14px;
+        border: 2px solid var(--red, #e21b2d);
+        z-index: 0;
+        transition: top .3s ease, left .3s ease, right .3s ease, bottom .3s ease;
+      }
+      .act-frame:hover::before { top: 20px; left: 20px; right: -20px; bottom: -20px; }
+      .act-photo { position: relative; z-index: 1; overflow: hidden; background: var(--paper-2, #f7f7f5); }
+      .act-photo img { transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+      .act-frame:hover .act-photo img { transform: scale(1.04); }
+      .act-photo::after {
+        content: "";
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.28) 100%);
+        pointer-events: none;
+      }
+      .act-badge {
+        position: absolute; left: 0; bottom: 0; z-index: 2;
+        padding: 10px 18px;
+        background: var(--yellow, #f4c542);
+        color: var(--ink, #111) !important;
+        font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase;
+      }
+      .act-eyebrow {
+        display: flex; align-items: center; gap: 12px;
+        margin: 0 0 14px !important;
+        color: var(--red, #e21b2d) !important;
+        font-size: 12px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase;
+      }
+      .act-eyebrow::before { content: ""; width: 34px; height: 3px; background: var(--red, #e21b2d); }
+      .act-meta {
+        display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+        margin: 28px 0 0; padding: 18px 0;
+        border-top: 1px solid var(--line, #e5e5e5);
+        border-bottom: 1px solid var(--line, #e5e5e5);
+      }
+      .act-meta dt {
+        margin: 0 0 4px;
+        color: var(--subtle, #8a8a8a) !important;
+        font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+      }
+      .act-meta dd { margin: 0; color: var(--ink, #111) !important; font-size: 14px; font-weight: 700; line-height: 1.35; }
+      @media (max-width: 480px) { .act-meta { grid-template-columns: 1fr 1fr; } }
+    </style>
+
+    <section id="activities" aria-labelledby="activities-title" class="py-2xl relative">
+      <div class="max-w-7xl mx-auto px-4 md:px-10">
+        <div class="grid grid-cols-12 gap-4 mb-xl">
+          <div class="col-span-12 lg:col-span-8">
+            <header class="section-header">
+              <h2 id="activities-title" class="section-title">Activities &amp; Documentation</h2>
+              <p class="section-desc">A look at the activities, events, and experiences I have been involved in.</p>
+            </header>
+          </div>
+        </div>
+
+        <article class="grid grid-cols-12 gap-6 lg:gap-12 items-center">
+          <!-- Photo (replace src, alt, and badge date) -->
+          <div class="col-span-12 lg:col-span-7">
+            <div class="act-frame">
+              <div class="act-photo">
+                <img src="assets/image/aktivitas (2).jpg" alt="Chairman of HMIF UKRI 2024 documentation" class="w-full aspect-[4/3] object-cover">
+                <span class="act-badge">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Details (replace text) -->
+          <div class="col-span-12 lg:col-span-5 min-w-0">
+            <p class="act-eyebrow">Organization</p>
+            <h3 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] text-fg">Chairman of HMIF UKRI 2024</h3>
+            <p class="mt-4 text-fg-muted leading-relaxed">Led the Himpunan Mahasiswa Teknik Informatika (HMIF) of Universitas Kebangsaan Republik Indonesia as Chairman in 2024. Guided the organization's direction and coordinated its board and programs, building a collaborative Informatics student community under the spirit.</p>
+
+            <dl class="act-meta">
+              <div>
+                <dt>Date</dt>
+                <dd>2024</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Bandung, Indonesia</dd>
+              </div>
+              <div>
+                <dt>Role</dt>
+                <dd>Chairman</dd>
+              </div>
+            </dl>
+
+            <div class="mt-8">
+              <a href="activities.html" class="btn-primary inline-flex items-center gap-2 group">
+                View All Activities
+                <svg class="icon icon-sm group-hover:translate-x-1 transition-transform duration-fast" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
